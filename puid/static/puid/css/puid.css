@@ -1,0 +1,158 @@
+body {
+    background: dimgrey;
+}
+
+aside {
+    float: left;
+    background-image: url(../img/bg2.jpg);
+    width: 14%;
+    padding: 2.5%;
+    height: 100vh;
+    color: #fff;
+    border-right: 8px solid #4d4d4d;
+    display: block;
+    position: fixed;
+}
+
+aside img {
+    width: 100px;
+    margin-left: 30px;
+    float: revert;
+    outline: 3px solid green;
+    border-radius: 10px;
+}
+
+aside .logo {
+    font-size: 17px;
+    margin-left: 10px;
+    font-weight: bold;
+    position: relative;
+    top: 10px;
+    color: #009900;
+}
+
+aside h3 {
+    margin-top: 50px;
+    font-size: 20px;
+    text-decoration: darkorchid;
+
+}
+
+aside ul {
+    list-style: none
+}
+
+aside ul li {
+    color: #fff;
+    display: block;
+    margin-top: 50px;
+    margin-left: -30px;
+}
+
+aside ul li:hover, aside ul a:hover {
+    color: #eb5959;
+    text-decoration: none;
+    transform: scale(1.05);
+}
+
+main .features {
+    float: left;
+    color: #181818;
+    margin-top: 500px;
+    text-align: center;
+    width: 75%;
+}
+
+main .features h1 {
+    font-size: 51px;
+}
+
+main .features p {
+    max-width: 600px;
+    margin: 20px auto
+}
+
+.alert-warning {
+    float: left;
+    clear: both;
+    width: 600px;
+    margin: 10px 15%;
+    text-align: left;
+}
+
+form {
+    margin-left: 14%;
+    margin-top: 0px;
+    width: 86%;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 0px;
+    background-image: url(../img/fdff.svg);
+}
+
+.empty-form {
+    margin-left: 2%;
+    width: 140px;
+    margin-top: -85px;
+}
+
+.cn {
+    margin-left: 65%;
+    width: 600px;
+    margin-top: -100px;
+    display: block;
+}
+
+form h1 {
+    margin-left: 1%;
+    width: 200px;
+    margin-top: -70px;
+}
+
+.table_dark {
+    font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif;
+    font-size: 17px;
+    width: 1000px;
+    text-align: center;
+    border-collapse: collapse;
+    background: seagreen;
+    margin-left: 25%;
+    margin-top: 20px;
+
+
+}
+
+.table_dark th {
+    color: #ffffff;
+    border-bottom: 1px solid #37B5A5;
+    padding: 10px 17px;
+}
+
+.table_dark td {
+    color: white;
+    border-bottom: 1px solid #37B5A5;
+    border-right: 1px solid #37B5A5;
+    padding: 7px 17px;
+}
+
+
+.table_dark tr:last-child td {
+    border-bottom: none;
+}
+
+.table_dark td:last-child {
+    border-right: none;
+}
+
+.table_dark tr:hover td {
+    text-decoration: underline;
+}
+
+.container {
+   font-size: 13px;
+    width: 120px;
+    text-align: center;
+    border-collapse: collapse;
+    margin-top: 5px;
+}
+

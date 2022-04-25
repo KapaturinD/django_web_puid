@@ -1,0 +1,74 @@
+{% extends 'puid/base.html' %}
+
+{% block title %}Фиксации{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        <div class="container">
+            <label style="color: black"><b>
+                <mark>От:</mark>
+            </b><input type="datetime-local" name="fromDate" class="datetime"><br></label>
+            <label style="color: black"><b>
+                <mark>До:</mark>
+            </b><input type="datetime-local" name="toDate" class="datetime"><br></label>
+            <label style="color: white"><b>
+                <mark>Точка фиксации:</mark>
+            </b></label>
+            <select name="zone">
+                <option value="Z01C02R1P02L01">Шортанды (НС-Щ)</option>
+                <option value="C02Z01R1P05L01">Шортанды (Щ-НС)</option>
+                <option value="Z01C02R1P03L01">Акколь (НС-Щ)</option>
+                <option value="C02Z01R1P04L01">Акколь (Щ-НС)</option>
+                <option value="2">Софиевка -F (Н-П)</option>
+                <option value="2">Софиевка -F (П-Н)</option>
+            </select>
+            <button style="margin-right: 100px" class="btn btn-success" name="send" type="submit">Поиск</button>
+{#            <button class="btn btn-danger" name="reset" type="reset">Сброс</button>#}
+        </div>
+{#        <button class="btn btn-danger" name="reset" type="reset">Количество проездов: {{ }} тс</button>#}
+    </form>
+    <div>
+        <table class="table_dark">
+            <tr>
+                <th></th>
+                <th></th>
+                <th style="color:white">Количество фиксации: {{ resul }} тс</th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% for el in page_obj %}
+                <tr>
+                    <td>{{ el.datetime }}:{{ el.datetime.second }}</td>
+                    <td>{{ el.vehicle_class }} class</td>
+                    <td>{{ el.speed }} km/h</td>
+                    <td>{{ el.zone }}</td>
+                    <td>{{ el.length }} m</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="container">
+        <nav aria-label="...">
+            <ul class="pagination">
+                {% if page_obj.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page=1">&laquo </a></li>
+                    <li class="page-item"><a class="page-link"
+                                             href="?page={{ page_obj.previous_page_number }}">Предыдущий</a></li>
+                {% endif %}
+
+                {% for i in nums %}
+                    {#                <li class="page-item"><a href="?page={{ forloop.counter }}">{{ forloop.counter }}</a></li>#}
+                {% endfor %}
+                {% if page_obj.has_next %}
+                    <li class="page-item"><a class="page-link"
+                                             href="?page={{ page_obj.next_page_number }}">Следующий</a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.paginator.num_pages }}">
+                        &raquo</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </div>
+
+{% endblock %}
